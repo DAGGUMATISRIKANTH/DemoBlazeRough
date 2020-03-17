@@ -1,12 +1,19 @@
 package com.pages;
 
+import java.util.concurrent.TimeUnit;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
 
 public class Invalidcontactdetails {
 	WebDriver driver;
 	public void demoblaze_homePage()
 	{
+		System.setProperty("webdriver.chrome.driver", "D:\\Selenium Jars\\Chrome jars\\chromedriver.exe");
+		driver = new ChromeDriver();
+		driver.manage().window().maximize();
+		driver.manage().timeouts().implicitlyWait(50, TimeUnit.SECONDS);
 		driver.get("https://demoblaze.com/index.html");
 		System.out.println(driver.getTitle());
 	}
